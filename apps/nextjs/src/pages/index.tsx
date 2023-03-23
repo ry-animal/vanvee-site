@@ -123,7 +123,7 @@ const Home: NextPage = () => {
             </p>
           </div>
         </div>
-        <footer className="static bottom-0 p-2 font-extrabold tracking-tight">
+        <footer className="static bottom-0 mb-1 mt-4 font-extrabold tracking-tight">
           vanvee | 2023
         </footer>
       </main>
