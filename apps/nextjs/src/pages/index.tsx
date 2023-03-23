@@ -80,7 +80,7 @@ const AuthShowcase: React.FC = () => {
   );
 
   return (
-    <div className="flex flex-row items-center justify-center gap-2 sm:flex-col">
+    <div className="flex flex-col items-center justify-center gap-2 sm:flex-row">
       {isSignedIn && (
         <>
           <p className="text-center text-sm text-white sm:text-2xl">
