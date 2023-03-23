@@ -22,6 +22,7 @@ const PostCard: React.FC<{
 
 const Home: NextPage = () => {
   const postQuery = trpc.post.all.useQuery();
+  const lightgreen = "hsl(120,100%,70%)";
 
   return (
     <>
@@ -55,12 +56,72 @@ const Home: NextPage = () => {
             )}
           </div>
 
-          <Image
-            src="/images/vanvee.webp"
-            width={500}
-            height={500}
-            alt="vanvee logo"
-          />
+          <div className="flex flex-col items-center justify-center sm:flex-row">
+            <Image
+              src="/images/vanvee.webp"
+              width={500}
+              height={500}
+              alt="vanvee logo"
+            />
+            <p className="flex w-[75%] text-center italic tracking-tight text-white sm:w-[25%]">
+              rev up your alerts and cruise to success with vanvee&apos;s
+              high-octane alerting system straight onto the fast lane.
+            </p>
+          </div>
+
+          <div className="rounded-xl bg-slate-400 px-4 py-8 text-center shadow-2xl">
+            <h2 className="flex items-start justify-center text-4xl font-extrabold tracking-tight">
+              <span className="mr-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke={lightgreen}
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5"
+                  />
+                </svg>
+              </span>
+              what is vanvee?
+              <span className="ml-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="red"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5"
+                  />
+                </svg>
+              </span>
+            </h2>
+            <p className="text-md mt-4 tracking-tighter md:text-2xl md:tracking-tight">
+              Vanvee is an exceptional SaaS notification service that
+              revolutionizes the way businesses communicate and engage with
+              their audience. By integrating Vanvee into your site, you empower
+              your business with an innovative, streamlined solution that helps
+              you stay connected with customers, partners, and team members
+              alike. This powerful platform harnesses the agility of a van,
+              driving your notifications to reach their destination swiftly and
+              reliably. Vanvee's intuitive interface and smart features enable
+              you to customize and manage alerts with ease, ensuring that
+              important updates never go unnoticed. With Vanvee at the helm of
+              your communication strategy, you'll not only enhance user
+              experience but also foster stronger relationships, boost team
+              productivity, and ultimately, steer your business towards the fast
+              lane of success.
+            </p>
+          </div>
         </div>
         <footer className="absolute bottom-0 p-2 font-extrabold tracking-tight">
           vanvee | 2023
@@ -82,23 +143,18 @@ const AuthShowcase: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-2 sm:flex-row">
       {isSignedIn && (
-        <>
-          <p className="text-center text-sm text-white sm:text-2xl">
-            {secretMessage && <span>Hello, {secretMessage}</span>}
-          </p>
-          <div className="flex items-center justify-center">
-            <UserButton
-              appearance={{
-                elements: {
-                  userButtonAvatarBox: {
-                    width: "3rem",
-                    height: "3rem",
-                  },
+        <div className="flex items-center justify-center">
+          <UserButton
+            appearance={{
+              elements: {
+                userButtonAvatarBox: {
+                  width: "3rem",
+                  height: "3rem",
                 },
-              }}
-            />
-          </div>
-        </>
+              },
+            }}
+          />
+        </div>
       )}
       {!isSignedIn && (
         <button className="w-32 rounded-full bg-white text-center text-lg text-black">
